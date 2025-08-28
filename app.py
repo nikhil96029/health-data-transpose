@@ -9,7 +9,8 @@ file = st.file_uploader("Upload your CSV", type="csv")
 if file:
     df = pd.read_csv(file, encoding="utf-8")
     pivot_df = df.pivot_table(
-        index=['booking_id','booking__customer_age','booking__customer_gender','booking__customer_name'],
+        index=['booking_id','booking__customer_age','booking__customer_gender','booking__collection_date','booking__customer_address','booking__client_refid'
+'booking__customer_name'],
         columns='test_values__test_parameter__test_name',
         values='test_values__value',
         aggfunc='first'
